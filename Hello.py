@@ -20,31 +20,24 @@ LOGGER = get_logger(__name__)
 
 def run():
     st.set_page_config(
-        page_title="Hello",
+        page_title="Maximum Number App",
         page_icon="👋",
     )
 
-    st.write("# Welcome to Streamlit! 👋")
+    st.write("# Welcome to Maximum Number! 👋")
 
-    st.sidebar.success("Select a demo above.")
+    st.write("Enter two numbers and we'll tell you which one is bigger!")
 
-    st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-    """
-    )
+    number1 = st.number_input("Enter the first number", value=0)
+    number2 = st.number_input("Enter the second number", value=0)
+    number3 = st.number_input("Enter the third number", value=0)
+
+    if st.button("Calculate Maximum"):
+        max_number = max(number1, number2, number3)
+        st.write(f"# The maximum number is `{max_number}`!")
+
+    
+
 
 
 if __name__ == "__main__":
